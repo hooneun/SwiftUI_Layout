@@ -23,10 +23,10 @@ struct MyColors {
 }
 
 struct ContentView: View {
-    @State private var changeLayout = false
+    @State private var layoutType = LayoutType.zStack
 
     var body: some View {
-        let layout = changeLayout ? AnyLayout(HStackLayout()) : AnyLayout(ZStackLayout())
+        let layout = AnyLayout(layoutType.layout)
 
         NavigationStack {
             layout {
@@ -35,13 +35,16 @@ struct ContentView: View {
                         .frame(width: myColor.width, height: myColor.height)
                 }
             }
+            .animation(.default, value: layoutType)
             .padding()
             .navigationTitle("AnyLayout")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        withAnimation {
-                            changeLayout.toggle()
+                        if layoutType.index < LayoutType.allCases.count - 1 {
+                            layoutType = LayoutType.allCases[layoutType.index + 1]
+                        } else {
+                            layoutType = LayoutType.allCases[0]
                         }
                     } label: {
                         Image(systemName: "circle.grid.3x3.fill")
@@ -49,6 +52,25 @@ struct ContentView: View {
                     }
                 }
             }
+        }
+    }
+}
+
+enum LayoutType: Int, CaseIterable {
+    case zStack, hStack, vStack
+
+    var index: Int {
+        LayoutType.allCases.firstIndex(where: { $0 == self })!
+    }
+
+    var layout: any Layout {
+        switch self {
+        case .zStack:
+            return ZStackLayout()
+        case .hStack:
+            return HStackLayout(alignment: .top, spacing: 0)
+        case .vStack:
+            return VStackLayout(alignment: .trailing)
         }
     }
 }
