@@ -17,7 +17,7 @@ struct MyColors {
             .init(color: .red, width: 60, height: 75),
             .init(color: .teal, width: 100, height: 100),
             .init(color: .purple, width: 40, height: 80),
-            .init(color: .indigo, width: 120, height: 100)
+            .init(color: .indigo, width: 120, height: 100),
         ]
     }
 }
@@ -26,22 +26,13 @@ struct ContentView: View {
     @State private var changeLayout = false
 
     var body: some View {
+        let layout = changeLayout ? AnyLayout(HStackLayout()) : AnyLayout(ZStackLayout())
+
         NavigationStack {
-            Group {
-                if changeLayout {
-                    HStack {
-                        ForEach(MyColors.allColors, id: \.color) { myColor in
-                            myColor.color
-                                .frame(width: myColor.width, height: myColor.height)
-                        }
-                    }
-                } else {
-                    ZStack {
-                        ForEach(MyColors.allColors, id: \.color) { myColor in
-                            myColor.color
-                                .frame(width: myColor.width, height: myColor.height)
-                        }
-                    }
+            layout {
+                ForEach(MyColors.allColors, id: \.color) { myColor in
+                    myColor.color
+                        .frame(width: myColor.width, height: myColor.height)
                 }
             }
             .padding()
