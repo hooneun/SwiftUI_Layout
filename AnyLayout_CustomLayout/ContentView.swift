@@ -57,7 +57,7 @@ struct ContentView: View {
 }
 
 enum LayoutType: Int, CaseIterable {
-    case zStack, hStack, vStack
+    case zStack, hStack, vStack, altStack
 
     var index: Int {
         LayoutType.allCases.firstIndex(where: { $0 == self })!
@@ -71,6 +71,8 @@ enum LayoutType: Int, CaseIterable {
             return HStackLayout(alignment: .top, spacing: 0)
         case .vStack:
             return VStackLayout(alignment: .trailing)
+        case .altStack:
+            return AlternateStackLayout()
         }
     }
 }

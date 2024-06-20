@@ -11,6 +11,7 @@
 		07C565552C243F6B00AE5980 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C565542C243F6B00AE5980 /* ContentView.swift */; };
 		07C565572C243F6B00AE5980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C565562C243F6B00AE5980 /* Assets.xcassets */; };
 		07C5655A2C243F6B00AE5980 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C565592C243F6B00AE5980 /* Preview Assets.xcassets */; };
+		07C565612C24506F00AE5980 /* AlternateStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C565602C24506F00AE5980 /* AlternateStackLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		07C565542C243F6B00AE5980 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		07C565562C243F6B00AE5980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07C565592C243F6B00AE5980 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		07C565602C24506F00AE5980 /* AlternateStackLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternateStackLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				07C565522C243F6B00AE5980 /* AnyLayout_CustomLayoutApp.swift */,
 				07C565542C243F6B00AE5980 /* ContentView.swift */,
+				07C565602C24506F00AE5980 /* AlternateStackLayout.swift */,
 				07C565562C243F6B00AE5980 /* Assets.xcassets */,
 				07C565582C243F6B00AE5980 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				07C565552C243F6B00AE5980 /* ContentView.swift in Sources */,
 				07C565532C243F6B00AE5980 /* AnyLayout_CustomLayoutApp.swift in Sources */,
+				07C565612C24506F00AE5980 /* AlternateStackLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
